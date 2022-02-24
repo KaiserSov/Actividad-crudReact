@@ -1,3 +1,10 @@
+/*
+PREGUNTAS:
+1.¿En promedio, cada cuánto debe actualizarse un código en react?
+2.¿Es totalmente necesario tener un archivo index.html o todo se puede controlar desde jsx?
+*/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
