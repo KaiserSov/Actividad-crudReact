@@ -17,13 +17,13 @@ const UserTable = (props) => {
                 props.users.length > 0 ?
                 props.users.map(user => (
                     <tr key={user.id}>
-                        <td>{user.name}</td>
+                        <td>{user.id} {user.name}</td>
                         <td>{user.username}</td>
                         <td>
                         <button 
                         className="button muted-button"
                         onClick={
-                          () => {props.setEditing(true)}
+                          () => {props.editRow(user)}
                         }
                         >
                           Edit

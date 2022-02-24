@@ -18,14 +18,14 @@ const AddUserForm = (props) => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <label>Name</label>
             <input type="text" name="name"  {...register("name", {
-                required: {value: true, message: 'Campo Requerido'}
+                required: {value: true, message: 'Debes tener un name'}
             })}/>
             <div>
                 {errors?.name?.message}
             </div>
             <label>Username</label>
             <input type="text" name="username"  {...register("username", {
-            required: {value: true, message: 'Campo Requerido'}
+            required: {value: true, message: 'Debes tener un username'}
         })} />
             <div>
                 {errors?.username?.message}

@@ -37,6 +37,28 @@ function App() {
   //Edit users
   const [editing, setEditing] = useState(false);
 
+  const [currentUser, setCurrentUser] = useState ({
+    id: null,
+    name: '',
+    username: ''
+  })
+
+  const editRow = (user) => {
+    setEditing(true);
+    setCurrentUser({
+      id: user.id,
+      name: user.name,
+      username: user.username
+    })
+  }
+
+  //Update the user when you edit it
+  const updateUser = (id, updateUser) => {
+    setEditing(false)
+
+    setUsers(users.map(user => (user.id === id ? updateUser : user)))
+  }
+
   return (
     <div className='container'>
      <h1>CRUD App with hooks</h1>
@@ -47,7 +69,10 @@ function App() {
            editing ? (
              <div>
               <h2>Edit user</h2>
-              <EditUserForm />
+              <EditUserForm 
+              currentUser={currentUser}
+              updateUser={updateUser}
+              />
             </div>
            ) : (
             <div>
@@ -62,7 +87,7 @@ function App() {
          <UserTable 
          users={users} 
          deleteUser={deleteUser} 
-         setEditing={setEditing} 
+         editRow={editRow}
          />
        </div>
      </div>
