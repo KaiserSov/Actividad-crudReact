@@ -15,6 +15,7 @@ const EditUserForm = (props) => {
 
     const onSubmit = (data, e) => {
         console.log(data)
+
         data.id = props.currentUser.id
 
         props.updateUser(props.currentUser.id, data)
@@ -39,6 +40,7 @@ const EditUserForm = (props) => {
             <div>
                 {errors?.username?.message}
             </div>
+
             <button>Edit user</button>
         </form>
     );
